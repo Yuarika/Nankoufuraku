@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    >
+
+    <title>難攻不落 - GAME</title>
+
+    <meta
+        name="description"
+        content="謎解きワールド「難攻不落」"
+    >
+
+    <meta
+        name="theme-color"
+        content="#05070b"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=DM+Mono:wght@400;500&family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link
+        rel="stylesheet"
+        href="game.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- ============================================================
+         BACKGROUND
+         ============================================================ -->
+
+    <div
+        class="background-grid"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="background-glow background-glow-1"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="background-glow background-glow-2"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- ============================================================
+         GAME
+         ============================================================ -->
+
+    <main class="game-container">
+
+
+        <!-- ========================================================
+             HEADER
+             ======================================================== -->
+
+        <header class="game-header">
+
+            <div class="system-label">
+                PUZZLE SYSTEM
+            </div>
+
+            <h1 class="game-title">
+                難攻不落
+            </h1>
+
+            <div class="game-subtitle">
+                UNLOCK THE WORD
+            </div>
+
+            <div class="header-line"></div>
+
+        </header>
+
+
+        <!-- ========================================================
+             MISSION
+             ======================================================== -->
+
+        <section class="mission">
+
+            <div class="mission-label">
+                MISSION
+            </div>
+
+            <div class="mission-number">
+                01
+            </div>
+
+            <p class="mission-text">
+                「ナンコウフラク」を作れ。
+            </p>
+
+        </section>
+
+
+        <!-- ========================================================
+             OPERATION GUIDE
+             ======================================================== -->
+
+        <section
+            class="operation-guide"
+            aria-label="操作方法"
+        >
+
+            <div class="guide-title">
+                OPERATION
+            </div>
+
+
+            <div class="guide-items">
+
+
+                <div class="guide-item">
+
+                    <span class="guide-key">
+                        ↑ / ↓
+                    </span>
+
+                    <span class="guide-description">
+                        グループの順番を入れ替える
+                    </span>
+
+                </div>
+
+
+                <div class="guide-item">
+
+                    <span class="guide-key">
+                        ← / →
+                    </span>
+
+                    <span class="guide-description">
+                        枠の中の選択位置を動かす
+                    </span>
+
+                </div>
+
+
+                <div class="guide-item">
+
+                    <span class="guide-key">
+                        ENTER
+                    </span>
+
+                    <span class="guide-description">
+                        現在の選択を確定する
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================
+             PUZZLE BOARD
+             ======================================================== -->
+
+        <section
+            id="puzzleBoard"
+            class="puzzle-board"
+            aria-label="パズル"
+        >
+        </section>
+
+
+        <!-- ========================================================
+             ANSWER
+             ======================================================== -->
+
+        <section
+            class="answer-area"
+            aria-label="回答"
+        >
+
+
+            <div
+                id="selectedPreview"
+                class="selected-preview"
+            >
+            </div>
+
+
+            <div
+                class="result-area"
+            >
+
+                <div class="result-label">
+                    RESULT
+                </div>
+
+                <div
+                    id="result"
+                    class="result"
+                    aria-live="polite"
+                >
+                </div>
+
+            </div>
+
+
+            <div class="main-controls">
+
+
+                <button
+                    id="enterButton"
+                    class="enter-button"
+                    type="button"
+                >
+
+                    <span class="enter-button-text">
+                        ENTER
+                    </span>
+
+                    <span class="enter-button-line"></span>
+
+                </button>
+
+
+                <button
+                    id="resetButton"
+                    class="reset-button"
+                    type="button"
+                >
+                    RESET
+                </button>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- ========================================================
+             FOOTER
+             ======================================================== -->
+
+        <footer class="game-footer">
+
+            <span>
+                YUARIKA / WEB PUZZLE
+            </span>
+
+            <span>
+                SYSTEM // 01
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- ============================================================
+         CLEAR OVERLAY
+         ============================================================ -->
+
+    <div
+        id="clearOverlay"
+        class="clear-overlay"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="clearTitle"
+        aria-hidden="true"
+    >
+
+
+        <div
+            class="clear-backdrop"
+            aria-hidden="true"
+        ></div>
+
+
+        <div class="clear-panel">
+
+
+            <div class="clear-top-line"></div>
+
+
+            <div class="clear-label">
+                PUZZLE CLEARED
+            </div>
+
+
+            <h2
+                id="clearTitle"
+                class="clear-title"
+            >
+                難攻不落
+            </h2>
+
+
+            <div
+                id="clearAnswer"
+                class="clear-answer"
+            >
+                CLEAR
+            </div>
+
+
+            <div
+                id="clearReading"
+                class="clear-reading"
+            >
+                PUZZLE COMPLETE
+            </div>
+
+
+            <div class="clear-divider"></div>
+
+
+            <div class="clear-actions">
+
+
+                <button
+                    id="xPostButton"
+                    class="clear-action-button x-post-button"
+                    type="button"
+                >
+
+                    <span class="clear-action-main">
+                        𝕏  CLEAR POST
+                    </span>
+
+                    <span class="clear-action-sub">
+                        告知ポストを引用して投稿
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="profileButton"
+                    class="clear-action-button profile-button"
+                    type="button"
+                >
+
+                    <span class="clear-action-main">
+                        ◎  AUTHOR PROFILE
+                    </span>
+
+                    <span class="clear-action-sub">
+                        作者プロフィール
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+            <button
+                id="closeClearButton"
+                class="clear-close-button"
+                type="button"
+            >
+                CLOSE
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <script src="game.js"></script>
+
+</body>
+
+</html>
