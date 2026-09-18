@@ -129,7 +129,8 @@ const profileButton =
 /* ================================================================
  * Puzzle Data
  * ================================================================ */
-
+const PUZZLE_URL =
+    "https://yuarika.github.io/Nankoufuraku/";
 const PUZZLE_DATA = [
 
     /* ------------------------------------------------------------
@@ -556,7 +557,7 @@ document.addEventListener(
                      */
 
                     const currentUrl =
-                        window.location.href;
+    PUZZLE_URL;
 
 
                     const postText =

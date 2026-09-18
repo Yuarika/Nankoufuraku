@@ -36,8 +36,8 @@
 
 
 /* ================================================================
- * BASE
- * ================================================================ */
+   BASE
+   ================================================================ */
 
 * {
     box-sizing: border-box;
@@ -46,9 +46,13 @@
 
 html,
 body {
+
     margin: 0;
+
     padding: 0;
+
     width: 100%;
+
     min-height: 100%;
 
     background:
@@ -71,28 +75,34 @@ body {
 
 
 body {
+
     min-height: 100vh;
+
     overflow-x: hidden;
 }
 
 
 button,
 a {
+
     -webkit-tap-highlight-color: transparent;
 }
 
 
 button {
+
     font-family: inherit;
 }
 
 
 /* ================================================================
- * NOISE
- * ================================================================ */
+   NOISE
+   ================================================================ */
 
 .noise {
+
     position: fixed;
+
     inset: 0;
 
     pointer-events: none;
@@ -115,10 +125,11 @@ button {
 
 
 /* ================================================================
- * LANDING
- * ================================================================ */
+   LANDING
+   ================================================================ */
 
 .landing-page {
+
     background:
         linear-gradient(
             rgba(0, 5, 8, 0.76),
@@ -131,6 +142,7 @@ button {
 
 
 .landing {
+
     width: min(760px, 92%);
 
     min-height: 100vh;
@@ -149,10 +161,11 @@ button {
 
 
 /* ================================================================
- * SYSTEM HEADER
- * ================================================================ */
+   SYSTEM HEADER
+   ================================================================ */
 
 .system-header {
+
     width: 100%;
 
     display: flex;
@@ -172,20 +185,23 @@ button {
 
 
 .system-id {
+
     color: var(--pink-light);
 }
 
 
 .system-status {
+
     color: var(--cyan);
 }
 
 
 /* ================================================================
- * TITLE
- * ================================================================ */
+   TITLE
+   ================================================================ */
 
 .title-card {
+
     width: 100%;
 
     padding:
@@ -208,14 +224,17 @@ button {
 
 
 .title-card::before {
+
     content: "";
 
     position: absolute;
 
     left: 0;
+
     top: 0;
 
     width: 100%;
+
     height: 3px;
 
     background:
@@ -229,6 +248,7 @@ button {
 
 
 .title-small {
+
     font-size: 16px;
 
     letter-spacing: 0.25em;
@@ -241,6 +261,7 @@ button {
 
 
 .title-card h1 {
+
     margin: 0;
 
     font-size:
@@ -266,6 +287,7 @@ button {
 
 
 .title-hashtag {
+
     margin-top: 18px;
 
     font-family:
@@ -281,151 +303,57 @@ button {
 
 
 /* ================================================================
- * SECTION LABEL
- * ================================================================ */
+   SECTION LABEL
+   ================================================================ */
 
 .section-label {
+
     font-family:
         var(--font-mono);
 
-    font-size: 11px;
+    font-size: 12px;
 
     letter-spacing: 0.3em;
 
     color:
         var(--cyan);
 
-    margin-bottom: 10px;
-}
-
-
-/* ================================================================
- * ABOUT
- * ================================================================ */
-
-.intro-card {
-    width: 100%;
-
-    margin-top: 35px;
-
-    padding: 30px;
-
-    border-left:
-        3px solid
-        var(--cyan);
-
-    background:
-        rgba(0, 8, 12, 0.82);
-
-    box-shadow:
-        var(--shadow-cyan);
-}
-
-
-.about-mark {
-    margin:
-        8px 0 5px;
-
-    font-size: 16px;
-
-    color:
-        var(--cyan);
-
-    text-shadow:
-        var(--shadow-cyan);
-}
-
-
-.intro-card h2 {
-    margin:
-        0 0 20px;
-
-    font-size: 30px;
-
-    letter-spacing:
-        0.15em;
-}
-
-
-.intro-card p {
-    line-height: 2;
-
-    color:
-        #d7ddde;
-
-    margin:
-        8px 0;
-}
-
-
-/* ================================================================
- * RULE BOX
- * ================================================================ */
-
-.rule-box {
-    margin-top: 13px;
-
-    padding:
-        13px 16px;
-
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.12);
-
-    background:
-        rgba(255, 255, 255, 0.025);
-
-    font-family:
-        var(--font-mono);
-
-    font-size: 13px;
-
-    color:
-        #bbc4c6;
-}
-
-
-.rule-box span {
-    color:
-        var(--pink);
-
-    margin-right:
-        15px;
-
-    font-weight:
-        bold;
-}
-
-
-/* ================================================================
- * ACTION
- * ================================================================ */
-
-.action-section {
-    width: 100%;
-
-    margin-top: 35px;
-}
-
-
-.action-section > .section-label {
     margin-bottom: 12px;
 }
 
 
 /* ================================================================
- * ACTION BUTTON
- * ================================================================ */
+   ACTION
+   ================================================================ */
 
-.action-button {
+.action-section {
+
     width: 100%;
 
-    min-height: 72px;
+    margin-top: 38px;
+}
 
-    margin-top: 8px;
+
+.action-section > .section-label {
+
+    margin-bottom: 14px;
+}
+
+
+/* ================================================================
+   ACTION BUTTON
+   ================================================================ */
+
+.action-button {
+
+    width: 100%;
+
+    min-height: 82px;
+
+    margin-top: 10px;
 
     padding:
-        10px 16px;
+        12px 18px;
 
     display: flex;
 
@@ -452,6 +380,7 @@ button {
 
 
 .action-button:hover {
+
     transform:
         translateX(4px);
 
@@ -468,14 +397,15 @@ button {
 
 
 .action-number {
-    width: 42px;
+
+    width: 48px;
 
     flex-shrink: 0;
 
     font-family:
         var(--font-mono);
 
-    font-size: 11px;
+    font-size: 12px;
 
     letter-spacing:
         0.08em;
@@ -486,25 +416,27 @@ button {
 
 
 .action-content {
+
     flex: 1;
 
     display: flex;
 
     align-items: baseline;
 
-    gap: 14px;
+    gap: 16px;
 
     min-width: 0;
 }
 
 
 .action-title {
+
     flex-shrink: 0;
 
     font-family:
         var(--font-mono);
 
-    font-size: 14px;
+    font-size: 16px;
 
     font-weight:
         bold;
@@ -518,10 +450,11 @@ button {
 
 
 .action-description {
+
     color:
         #7f8b8e;
 
-    font-size: 12px;
+    font-size: 13px;
 
     letter-spacing:
         0.05em;
@@ -529,14 +462,15 @@ button {
 
 
 .action-arrow {
+
     flex-shrink: 0;
 
-    margin-left: 15px;
+    margin-left: 18px;
 
     font-family:
         var(--font-mono);
 
-    font-size: 18px;
+    font-size: 21px;
 
     color:
         var(--cyan);
@@ -547,16 +481,18 @@ button {
 
 
 .action-button:hover .action-arrow {
+
     transform:
         translateX(4px);
 }
 
 
 /* ================================================================
- * START BUTTON
- * ================================================================ */
+   START BUTTON
+   ================================================================ */
 
 .action-start {
+
     border-color:
         var(--pink);
 
@@ -569,6 +505,7 @@ button {
 
 
 .action-start:hover {
+
     border-color:
         var(--pink-light);
 
@@ -581,16 +518,18 @@ button {
 
 
 .action-start .action-title {
+
     color:
         var(--pink-light);
 }
 
 
 /* ================================================================
- * POST ON X
- * ================================================================ */
+   POST ON X
+   ================================================================ */
 
 .action-x:hover {
+
     border-color:
         var(--white);
 
@@ -601,16 +540,18 @@ button {
 
 
 .action-x .action-title {
+
     color:
         var(--white);
 }
 
 
 /* ================================================================
- * AUTHOR PROFILE
- * ================================================================ */
+   AUTHOR PROFILE
+   ================================================================ */
 
 .action-profile:hover {
+
     border-color:
         var(--cyan);
 
@@ -620,16 +561,18 @@ button {
 
 
 .action-profile .action-title {
+
     color:
         var(--cyan);
 }
 
 
 /* ================================================================
- * FOOTER
- * ================================================================ */
+   FOOTER
+   ================================================================ */
 
 .landing-footer {
+
     width: 100%;
 
     margin-top: auto;
@@ -661,12 +604,13 @@ button {
 
 
 /* ================================================================
- * MOBILE
- * ================================================================ */
+   MOBILE
+   ================================================================ */
 
 @media (max-width: 650px) {
 
     .landing {
+
         width:
             94%;
 
@@ -676,48 +620,69 @@ button {
 
 
     .system-header {
+
         font-size:
             8px;
     }
 
 
     .title-card {
+
         padding:
             20px 18px 25px;
     }
 
 
     .title-small {
+
         font-size:
             13px;
     }
 
 
     .title-card h1 {
+
         font-size:
             54px;
     }
 
 
     .title-hashtag {
+
         font-size:
             11px;
     }
 
 
-    .intro-card {
-        padding:
-            22px;
+    .action-section {
+
+        margin-top:
+            30px;
     }
 
 
-    .intro-card h2 {
+    .action-button {
+
+        min-height:
+            76px;
+
+        padding:
+            10px 14px;
+    }
+
+
+    .action-number {
+
+        width:
+            38px;
+
         font-size:
-            25px;
+            11px;
     }
 
 
     .action-content {
+
         flex-direction:
             column;
 
@@ -725,31 +690,51 @@ button {
             flex-start;
 
         gap:
-            3px;
+            4px;
+    }
+
+
+    .action-title {
+
+        font-size:
+            15px;
     }
 
 
     .action-description {
+
         font-size:
-            10px;
+            11px;
     }
 
 
-    .action-number {
-        width:
-            34px;
+    .action-arrow {
+
+        margin-left:
+            10px;
+
+        font-size:
+            19px;
+    }
+
+
+    .landing-footer {
+
+        padding-top:
+            45px;
     }
 
 }
 
 
 /* ================================================================
- * REDUCED MOTION
- * ================================================================ */
+   REDUCED MOTION
+   ================================================================ */
 
 @media (prefers-reduced-motion: reduce) {
 
     .action-button {
+
         transition:
             none !important;
     }
