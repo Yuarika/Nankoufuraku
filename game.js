@@ -71,7 +71,7 @@
  */
 
 const ANNOUNCEMENT_POST_URL =
-    "";
+    "https://x.com/yuarikaa/status/2097612090353783190";
 
 
 
