@@ -474,117 +474,64 @@ document.addEventListener(
         );
 
 
+/* ================================================================
+ * X
+ * ================================================================ */
 
-        /* --------------------------------------------------------
-         * X
-         * -------------------------------------------------------- */
+if (xPostButton) {
 
-        if (xPostButton) {
+    xPostButton.addEventListener(
+        "click",
+        function () {
+
+            if (xPostButton.disabled) {
+
+                return;
+
+            }
+
+
+            playButtonSound();
+
+
+
+            /* ==================================================
+             * クリア投稿
+             * ================================================== */
 
             /*
-             * 告知ポストURLが空欄でも
-             * ボタンは無効化しない。
-             *
-             * 告知ポストがまだ存在しない場合は、
-             * 現在のページURLを使って通常の
-             * クリア投稿を作成する。
+             * 告知ポストURLと
+             * Web謎本体のURLを
+             * 両方含める。
              */
 
-            xPostButton.addEventListener(
-                "click",
-                function () {
-
-                    if (xPostButton.disabled) {
-
-                        return;
-
-                    }
+            const postText =
+                "Web謎「難攻不落」をクリアしました！\n\n" +
+                ANNOUNCEMENT_POST_URL +
+                "\n\n" +
+                PUZZLE_URL +
+                "\n\n" +
+                "#Web_難攻不落";
 
 
-                    playButtonSound();
+            const xUrl =
+                "https://x.com/intent/post?" +
+                "text=" +
+                encodeURIComponent(
+                    postText
+                );
 
 
-
-                    /* ==================================================
-                     * 告知ポストURLが設定されている場合
-                     * ================================================== */
-
-                    if (ANNOUNCEMENT_POST_URL) {
-
-                        /*
-                         * 告知ポストURLを含めた
-                         * クリア投稿画面を開く。
-                         */
-
-                        const postText =
-                            "Web謎「難攻不落」をクリアしました！\n\n" +
-                            "#Web_難攻不落";
-
-
-                        const xUrl =
-                            "https://x.com/intent/post?" +
-                            "text=" +
-                            encodeURIComponent(
-                                postText
-                            ) +
-                            "&url=" +
-                            encodeURIComponent(
-                                ANNOUNCEMENT_POST_URL
-                            );
-
-
-                        window.open(
-                            xUrl,
-                            "_blank",
-                            "noopener,noreferrer"
-                        );
-
-
-                        return;
-
-                    }
-
-
-
-                    /* ==================================================
-                     * 告知ポストURLが空欄の場合
-                     * ================================================== */
-
-                    /*
-                     * 告知ポストがまだない場合は、
-                     * 現在のWeb謎ページURLを含めて
-                     * 通常のクリア投稿を作成する。
-                     */
-
-                    const currentUrl =
-    PUZZLE_URL;
-
-
-                    const postText =
-                        "Web謎「難攻不落」をクリアしました！\n\n" +
-                        currentUrl +
-                        "\n\n" +
-                        "#Web_難攻不落";
-
-
-                    const xUrl =
-                        "https://x.com/intent/post?" +
-                        "text=" +
-                        encodeURIComponent(
-                            postText
-                        );
-
-
-                    window.open(
-                        xUrl,
-                        "_blank",
-                        "noopener,noreferrer"
-                    );
-
-                }
+            window.open(
+                xUrl,
+                "_blank",
+                "noopener,noreferrer"
             );
 
         }
+    );
+
+}
 
 
 
