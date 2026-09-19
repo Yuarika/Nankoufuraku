@@ -284,7 +284,7 @@ const PUZZLE_DATA = [
 
             {
                 id: "x3",
-                text: "🪙",
+                text: "💴",
                 result: "商"
             }
 
